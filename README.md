@@ -1,4 +1,4 @@
-# iptables
+# IPTABLES
 
 1. Copy the iptables file on your server
 
@@ -11,3 +11,5 @@
 5. Execute theses rules with `sudo sh /etc/init.d/iptables`
 
 6. Check with `sudo iptables -L`
+
+# FAIL2BAN
