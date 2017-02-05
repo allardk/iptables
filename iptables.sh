@@ -1,15 +1,17 @@
 #!/bin/sh
 
-# Flush rules
+SSH_PORT=22 # CHANGE ME IF REQUIRED
+
+# FLUSH RULES
 iptables -t filter -F
 iptables -t filter -X
 
-# Drop Rules
+# DROP RULES
 iptables -t filter -P OUTPUT DROP
 iptables -t filter -P INPUT DROP
 iptables -t filter -P FORWARD DROP
 
-# Established connections
+# ESTABLISHED CONNECTIONS
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
@@ -47,5 +49,5 @@ iptables -t filter -A INPUT -p tcp --dport 25 -j ACCEPT
 iptables -t filter -A OUTPUT -p tcp --dport 25 -j ACCEPT
 
 #SSH
-iptables -t filter -A INPUT -p tcp --dport 6477 -j ACCEPT
-iptables -t filter -A OUTPUT -p tcp --dport 6477 -j ACCEPT
+iptables -t filter -A INPUT -p tcp --dport $SSH_PORT -j ACCEPT
+iptables -t filter -A OUTPUT -p tcp --dport $SSH_PORT -j ACCEPT
