@@ -2,7 +2,7 @@
 
 1 - Copy iptables file on your server
 
-2 - Change SSH port
+2 - Edit var ```SSH_PORT``` if required
 
 3 - Move on ```/etc/init.d/```
 
