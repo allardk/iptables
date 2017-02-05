@@ -4,7 +4,7 @@
 
 2. Edit the variable `SSH_PORT` if required
 
-3. Move him on `/etc/init.d/`
+3. Move it to folder `/etc/init.d/`
 
 4. Edit his chmod to `chmod +x /etc/init.d/iptables`
 
